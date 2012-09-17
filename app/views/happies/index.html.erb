@@ -1,0 +1,24 @@
+<h1>Listing happies</h1>
+
+<% @happies.each do |happy| %>
+	<div class="happy-container">
+		<div class="happy-thought">
+			<strong><%= t("I'm happy because...") %></strong>
+		<span class="happy-thought">
+			<%= happy[:happy]%>
+		</span>
+		</div>
+		<div class="but-thought">
+			<strong><%= t("But...")%></strong>
+			<span class="but-thought">
+				<%= happy[:but] %>
+			</span>
+		</div>
+		<div class="happy-date">
+			<%= happy[:time] %>
+		</div>
+	</div>
+
+<% end %>
+
+<%= link_to 'New Happy', new_happy_path %>

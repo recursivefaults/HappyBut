@@ -1,0 +1,17 @@
+<%= form_for(@happy) do |f| %>
+  <% if @happy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@happy.errors.count, "error") %> prohibited this happy from being saved:</h2>
+
+      <ul>
+      <% @happy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
