@@ -13,17 +13,17 @@ class HappiesController < ApplicationController
   # POST /happies
   # POST /happies.json
   def create
-    @happy = Happy.new(params[:happy])
-
-    respond_to do |format|
-      if @happy.save
-        format.html { redirect_to @happy, notice: 'Happy was successfully created.' }
-        format.json { render json: @happy, status: :created, location: @happy }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @happy.errors, status: :unprocessable_entity }
-      end
-    end
+    @happy = Happy.create(params[:happy])
+    # 
+    # respond_to do |format|
+    #   if @happy.save
+    #     format.html { redirect_to @happy, notice: 'Happy was successfully created.' }
+    #     format.json { render json: @happy, status: :created, location: @happy }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @happy.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
 end

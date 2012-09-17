@@ -1,5 +1,5 @@
 class Happy < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :happy, :but
   def self.create(happy_hash = {})
     #Validate?
     id = REDIS.get :next_id

@@ -1,16 +1,6 @@
-<%= form_for(@happy) do |f| %>
-  <% if @happy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@happy.errors.count, "error") %> prohibited this happy from being saved:</h2>
-
-      <ul>
-      <% @happy.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for(:happy, :remote=>true) do |f| %>
+<%= f.text_field :happy %>
+<%= f.text_field :but %>
   <div class="actions">
     <%= f.submit %>
   </div>
