@@ -47,7 +47,7 @@
           <a class="brand" href="#">HappyBut</a>
           <div class="container nav-collapse">
             <ul class="nav pull-right">
-              <li><button class="btn btn-small btn-primary"><i class="icon-edit"></i></button></li>
+              <li><button id="new-button" class="btn btn-small btn-primary"><i class="icon-edit"></i></button></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -58,7 +58,9 @@
       <div class="content">
         <div class="row">
            <div class="span9">
+			<div id="new-happy-form" style="display: none;">
 			  <%= render :partial => 'happies/form' %>
+			</div>
               <%= yield %>
             </div>
         </div><!--/row-->
