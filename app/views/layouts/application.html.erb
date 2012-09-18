@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">HappyBut</a>
+          <a class="brand" href="#">I'm happy but...</a>
           <div class="container nav-collapse">
             <ul class="nav pull-right">
               <li><button id="new-button" class="btn btn-small btn-primary"><i class="icon-edit"></i></button></li>
@@ -54,24 +54,21 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <div class="row">
-           <div class="span9">
+	<div class="container">
+		<div class="span8 offset2">
 			<div id="new-happy-form" style="display: none;">
-			  <%= render :partial => 'happies/form' %>
+				<%= render :partial => 'happies/form' %>
 			</div>
-              <%= yield %>
-            </div>
-        </div><!--/row-->
-      </div><!--/content-->
+			<div id="happy-container" class="well">
+			<%= yield %>
+			</div>
+			<footer>
+				<p>&copy; Ryan Latta 2012</p>
+			</footer>
+		</div>
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
 
-    </div> <!-- /container -->
-
+	</div> <!-- /container -->
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

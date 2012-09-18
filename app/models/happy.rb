@@ -10,10 +10,11 @@ class Happy < ActiveRecord::Base
     end
     REDIS.incr :next_id
   end
-  def self.list(start_id = 0, stop_id = 100)
+  def self.list(start_id = REDIS.get(:next_id), stop_count = 100)
     items = []
-    logger.debug {"Start id: #{start_id}\tStop ID: #{stop_id}"}
-    (start_id..stop_id).each do |id|
+    start_id = start_id.to_i
+    logger.debug {"Start id: #{start_id}\tStop ID: #{stop_count}"}
+    start_id.downto(start_id - stop_count).each do |id|
       happy_hash = {}
       happy_hash[:happy]      = REDIS.get "#{id}:happy"
       happy_hash[:but]        = REDIS.get "#{id}:but"
