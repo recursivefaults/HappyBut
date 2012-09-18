@@ -1,13 +1,13 @@
 <% @happies.each do |happy| %>
 	<div class="happy-container">
 		<div class="happy-thought">
-			<strong><%= t("I'm happy because...") %></strong>
+			<strong><%= t(:happy) %></strong>
 		<span class="happy-thought">
 			<%= happy[:happy]%>
 		</span>
 		</div>
 		<div class="but-thought">
-			<strong><%= t("But...")%></strong>
+			<strong><%= t(:but)%></strong>
 			<span class="but-thought">
 				<%= happy[:but] %>
 			</span>

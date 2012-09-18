@@ -1,13 +1,13 @@
 <%= form_for(:happy, :remote=>true) do |f| %>
 <div class="control-group">
-	<%= f.label :happy, t("I'm happy because...") %>
+	<%= f.label :happy, t(:happy) %>
 	<%= f.text_field :happy, :class => "input-xxlarge" %>
 </div>
 <div class="control-group">
-	<%= f.label :but, t("But...") %>
+	<%= f.label :but, t(:but) %>
 	<%= f.text_field :but, :class => "input-xxlarge" %>
 </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => ['btn', 'btn-primary'], :disable_with => "Editing..." %>
   </div>
 <% end %>
