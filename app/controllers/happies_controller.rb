@@ -14,6 +14,7 @@ class HappiesController < ApplicationController
   # POST /happies.json
   def create
     @happy = Happy.create(params[:happy])
+    logger.debug {"About to add #{@happy.inspect}"}
     # 
     # respond_to do |format|
     #   if @happy.save

@@ -4,11 +4,13 @@ class Happy < ActiveRecord::Base
     #Validate?
     id = REDIS.get :next_id
     REDIS.multi do
+      happy_hash[:time] = Time.now.utc.to_s
       REDIS["#{id}:happy"] = happy_hash[:happy]
       REDIS["#{id}:but"]   = happy_hash[:but]
-      REDIS["#{id}:time"]  = Time.now.utc.to_s
+      REDIS["#{id}:time"]  = happy_hash[:time]
     end
     REDIS.incr :next_id
+    happy_hash
   end
   def self.list(start_id = REDIS.get(:next_id), stop_count = 100)
     items = []

@@ -1,1 +1,1 @@
-jQuery('#happy-container').prepend("<%=render "single", :locals => {:happy => @happy} %>");
+$("<%= escape_javascript(render(:partial => "single", :locals => {:happy => @happy})) %>").prependTo('#happy-container').hide().fadeIn();
