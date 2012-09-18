@@ -1,6 +1,12 @@
 <%= form_for(:happy, :remote=>true) do |f| %>
-<%= f.text_field :happy %>
-<%= f.text_field :but %>
+<div class="control-group">
+	<%= f.label :happy, t("I'm happy because...") %>
+	<%= f.text_field :happy, :class => "input-xxlarge" %>
+</div>
+<div class="control-group">
+	<%= f.label :but, t("But...") %>
+	<%= f.text_field :but, :class => "input-xxlarge" %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
